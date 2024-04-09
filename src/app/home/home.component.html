@@ -1,0 +1,12 @@
+<section>
+    <div>
+        <h1>Home</h1>
+        <p>Select a sensor from the navigation bar to view its data</p>
+
+        <h2>Status</h2>
+        <p (click)="testSensor('temperature')">Temperature: <span id="status-temperature" class="status-online">Running</span></p>
+        <p (click)="testSensor('camera')">Camera: <span id="status-camera" class="status-offline">Offline</span></p>
+        <p (click)="testSensor('accelerometer')">Accelerometer: <span id="status-accelerometer" class="status-offline">Offline</span></p>
+        <p (click)="testSensor('acoustic')">Acoustic: <span id="status-acoustic" class="status-offline">Offline</span></p>
+    </div>
+</section>
