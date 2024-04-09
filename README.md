@@ -1,12 +1,5 @@
 # DataDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-# DataDashboard
 SEIS622_Project
 
 # Dependencies
@@ -34,8 +27,6 @@ SEIS622_Project
    - Reminder: Get latest version before making any changes.
    - We can try managing code merges on our own or do them together. I don't expect a lot of code conflict??
   
-3. Making changes
-   - Any changes to the TypeScript require rebuilding the javascript files from the VSCode terminal. Other changes to HTML and CSS happen live.
-   ```
-   npm run build
-   ```
+3. Running & making changes
+
+  Run `npm run start` to start application from inside vscode. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
