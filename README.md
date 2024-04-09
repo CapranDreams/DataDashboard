@@ -6,13 +6,13 @@ SEIS622_Project
 - Git
 - VSCode
 
-# Cloning Repository
+# Instructions
 
-1. Clone repo from command line into current directory:
+###1. Clone repo from command line into current directory:
    ```
    git clone https://github.com/CapranDreams/SensorDashboard.git
    ```
-2. Set up in visual studio
+###2. Set up in visual studio
    - Open folder in VSCode
    - First time will need to pull / synchronize. This should be an option in the source control tab on the left.
 
@@ -27,6 +27,6 @@ SEIS622_Project
    - Reminder: Get latest version before making any changes.
    - We can try managing code merges on our own or do them together. I don't expect a lot of code conflict??
   
-3. Running & making changes
+###3. Running & making changes
 
-  Run `npm run start` to start application from inside vscode. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   - Run `npm run start` to start application from inside vscode. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
