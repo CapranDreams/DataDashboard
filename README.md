@@ -6,22 +6,36 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# DataDashboard
+SEIS622_Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Dependencies
+- Git
+- VSCode
 
-## Build
+# Cloning Repository
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone repo from command line into current directory:
+   ```
+   git clone https://github.com/CapranDreams/SensorDashboard.git
+   ```
+2. Set up in visual studio
+   - Open folder in VSCode
+   - First time will need to pull / synchronize. This should be an option in the source control tab on the left.
 
-## Running unit tests
+  <img src="https://github.com/CapranDreams/SensorDashboard/assets/6502745/c4e6d4b6-9026-4b0a-a25a-718eda5300f6" height="400">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   - You should see the project files now.
+   - Any changes made can be pushed to main unless we feel the need to make branches.
+   - Start the live view of the HTML by right clicking and selecting 'Open with live server'
+     
+  <img src="https://github.com/CapranDreams/SensorDashboard/assets/6502745/f1e5f783-3736-4f6d-9fce-dc8a5b771fd7" height="350">
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   - Reminder: Get latest version before making any changes.
+   - We can try managing code merges on our own or do them together. I don't expect a lot of code conflict??
+  
+3. Making changes
+   - Any changes to the TypeScript require rebuilding the javascript files from the VSCode terminal. Other changes to HTML and CSS happen live.
+   ```
+   npm run build
+   ```
