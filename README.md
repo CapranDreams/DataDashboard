@@ -20,10 +20,6 @@ SEIS622_Project
 
    - You should see the project files now.
    - Any changes made can be pushed to main unless we feel the need to make branches.
-   - Start the live view of the HTML by right clicking and selecting 'Open with live server'
-     
-  <img src="https://github.com/CapranDreams/SensorDashboard/assets/6502745/f1e5f783-3736-4f6d-9fce-dc8a5b771fd7" height="350">
-
    - Reminder: Get latest version before making any changes.
    - We can try managing code merges on our own or do them together. I don't expect a lot of code conflict??
   
