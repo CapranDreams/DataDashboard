@@ -1,0 +1,40 @@
+<section>
+    <div>
+        <h1>What is this data?</h1>
+        <p>This data dashboard is meant to help operators monitor friction stir welding machinery.</p>
+        <p>Friction stir welding is an industrial process used to weld metal by spinning a large pin into 
+            the metal surface and generating a lot of friction such that the metals approach melting point 
+            and get mixed together. The process is uses extremely large forces that generate a lot of heat 
+            and an important aspect to getting good weld quality includes maintaining the temperature and 
+            surface finish of the welded metal. The sensors monitored here are indicators of a functioning 
+            process.
+        </p>
+        <p>Thermocouple temperature monitoring works by embedding 8 thermocouples into the anvil below the 
+            weld surface. As the machine moves over the part being welded near the thermocouples, the 
+            temperature increases. Knowing the rate of motion and the temperature gradient observed in the 
+            plot, we can calculate the max temperature of the weld to ensure it does not get too hot or too 
+            cold. We can also calculate the total energy input into the weld system. 
+        </p>
+        <p>Camera frames can be used to observe the amount of flash generated at the weld surface. Flash is 
+            defined as hot metal that is extruded out of the surface if the metal gets too hot. If it is 
+            observed, the process should be cooled in-situ.
+        </p>
+        <p>Accelerometer data can be used to observe the acceleration of the machine in the x, y, and z 
+            axis. The acceleration data usually shows features of high torque when the machine is running too 
+            cold. Similarly, low torque and acceleration can indicate the process is too high. Additionally, 
+            acceleration can be used in calculating total energy imparted into the system. Additionally, 
+            certain patterns in acceleration combination data can be correlated to certain defects in the 
+            welds.
+        </p>
+        <p>Acoustic data is gathered at 394000 Hz. The data is then plotted in the frequency domain or as a 
+            power spectral density. Acoustic data is monitored for abnormal signals in high frequency bands. 
+            A normal weld will show nothing of interest here.
+        </p>
+    </div>
+    <div>
+        <h1>About</h1>
+        <p>
+            This dashboard was put together for the final project for class SEIS622.
+        </p>
+    </div>
+</section>
