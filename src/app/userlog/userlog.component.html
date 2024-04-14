@@ -1,0 +1,17 @@
+<h1>User Login Record</h1>
+
+<div>
+    <label for="userrecord">Add user ('enter' to submit):</label>
+    <input name="userrecord" [(ngModel)]="userval" (keyup.enter)="addRecord()" />
+</div>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>User</th>
+    </tr>
+    <tr *ngFor="let log of logs">
+        <td>{{log.time}}</td>
+        <td>{{log.user}}</td>
+    </tr>
+</table>

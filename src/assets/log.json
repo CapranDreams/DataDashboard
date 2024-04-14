@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "user": "Sasha",
+            "time": "04/10/2024"
+        },
+        {
+            "user": "Paris",
+            "time": "04/10/2024"
+        },
+        {
+            "user": "Sasha",
+            "time": "04/11/2024"
+        },
+        {
+            "user": "Sarah",
+            "time": "04/11/2024"
+        },
+        {
+            "user": "Paris",
+            "time": "04/12/2024"
+        },
+        {
+            "user": "Sarah",
+            "time": "04/12/2024"
+        },
+        {
+            "user": "Sasha",
+            "time": "04/12/2024"
+        }
+    ]
+}

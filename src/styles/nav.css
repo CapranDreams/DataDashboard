@@ -20,6 +20,8 @@
 }
 .nav_icon {
     max-height: 1.25em;
+    /* Adjust below as needed to match desired theme color (default is black) */
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 .nav_item_header {
     font-size: 1.2em;
