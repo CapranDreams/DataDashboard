@@ -24,5 +24,7 @@ SEIS622_Project
    - We can try managing code merges on our own or do them together. I don't expect a lot of code conflict??
   
 ### 3. Running & making changes
+   - cd into project folders first.
    - First time / missing libraries can be resolved with `npm install`
    - Run `npm run start` to start application from inside vscode. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   - Currently, APIs use `npm run dev` to start them up.
