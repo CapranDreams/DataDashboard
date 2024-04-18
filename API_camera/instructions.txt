@@ -1,0 +1,8 @@
+list devices:
+    ffmpeg -list_devices true -f dshow -i dummy
+
+record and save:
+    ffmpeg -f dshow -i video=”TECKNET Web Camera” out.mp4
+
+start stream:
+    ffmpeg -f dshow -i video=”TECKNET Web Camera” -vcodec libx264 -tune zerolatency -b 900k -f mpegts udp://localhost:1234
