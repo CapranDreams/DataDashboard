@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "API_acoustic"
+		},
+		{
+			"path": "API_temperature"
+		},
+		{
+			"path": "Dashboard"
+		},
+		{
+			"path": "DB_Mongo"
+		},
+		{
+			"path": "API_camera"
+		},
+		{
+			"path": "API_accelerometer"
+		}
+	],
+	"settings": {}
+}
