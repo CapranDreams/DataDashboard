@@ -4,6 +4,7 @@ import { RouterOutlet, Router } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subscription, timer, Observable } from 'rxjs';
+import { TemperatureDataService } from '../temperature-data.service';
 
 const API_URL = "http://localhost:9901";
 const update_frequency = 100; // ms
@@ -21,7 +22,7 @@ type DataPoint = {
     CommonModule,
     RouterOutlet,
     CanvasJSAngularChartsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   templateUrl: './temperature.component.html',
   styleUrl: './temperature.component.css'
@@ -31,10 +32,10 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
     private router : Router, 
     private elementRef: ElementRef, 
     private http : HttpClient, 
-  ) { 
-    // this.updateData();
-  }
+    private temperatureService : TemperatureDataService
+  ) {   }
 
+  // temperatureService = new TemperatureDataService();
   tempSubscription: Subscription = new Subscription();
   timerObs!: Observable<number>;
 
@@ -77,10 +78,9 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    // console.log("chart");
-    // console.log(this.chart);
-    // console.log(this.chart.nativeElement);
-
+    let previousData:DataPoint[] = this.temperatureService.getData();
+    this.data.concat(previousData);
+    
     this.timerObs = timer(1000, update_frequency); // Create a timer that emits every 1000 milliseconds
 
     this.timerObs.subscribe(() => {
@@ -141,6 +141,7 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
   
   updateChartData() {
     this.canvas.render();
+    this.temperatureService.setData(this.data);
   }
 
 }
