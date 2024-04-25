@@ -35,11 +35,9 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
     private temperatureService : TemperatureDataService
   ) {   }
 
-  // temperatureService = new TemperatureDataService();
   tempSubscription: Subscription = new Subscription();
   timerObs!: Observable<number>;
 
-  // @ViewChild('chartCanvas', {static: false, read: ElementRef }) chart!: ElementRef;
   canvas: any;
   data: DataPoint[] = [ ];
 
@@ -79,9 +77,9 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     let previousData:DataPoint[] = this.temperatureService.getData();
-    this.data.concat(previousData);
-    
-    this.timerObs = timer(1000, update_frequency); // Create a timer that emits every 1000 milliseconds
+    this.addData(previousData);
+
+    this.timerObs = timer(100, update_frequency); // Create a timer that emits every 1000 milliseconds
 
     this.timerObs.subscribe(() => {
       this.updateData();
@@ -113,6 +111,7 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
   }
  
   addData = (data:any) => {
+    // console.log(data);
     data.forEach( (val:DataPoint) => {
       // console.log(val);
       let newData = { x: val.x, y: val.y };

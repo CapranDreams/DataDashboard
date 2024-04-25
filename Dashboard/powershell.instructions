@@ -1,0 +1,31 @@
+run start script (on Windows only):
+    ./start.ps1
+
+    Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+    --     ----            -------------   -----         -----------     --------             -------
+    55     API_temp        BackgroundJob   Running       True            localhost            npm --prefix C:/Users/...
+    57     API_acoustic    BackgroundJob   Running       True            localhost            npm --prefix C:/Users/...
+    59     API_accel       BackgroundJob   Running       True            localhost            npm --prefix C:/Users/...
+    61     API_db          BackgroundJob   Running       True            localhost            npm --prefix C:/Users/...
+    63     Dashboard       BackgroundJob   Running       True            localhost            npm --prefix C:/Users/...
+
+
+
+view background thread:
+    Receive-Job -Id 57
+
+
+
+view list of threads:
+    Get-Process -Name PowerShell
+
+    Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+    -------  ------    -----      -----     ------     --  -- -----------
+        555      24    49756      64712       0.33  10152  30 powershell
+       1122      72   165184     154840       7.73  14684  30 powershell
+        544      24    46208      59672       0.19  15228  30 powershell
+        550      24    49896      64676       0.28  28208  30 powershell
+
+
+kill a process:
+    Stop-Process -Id 10152

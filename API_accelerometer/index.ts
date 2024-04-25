@@ -23,7 +23,7 @@ let data: IData[] = [];
 function getData() {
     data = [];
     for (let t = 0; t < time_bins; t++) {
-        let fft = fakeFFTData();
+        let fft = fakeFFTData(t);
         data.push({time:t, fft:fft});
     }
 }
@@ -41,7 +41,7 @@ app.listen(process.env.PORT, () => {
     console.log(`Accelerometer data API hosted on port ${process.env.PORT}`)
 });
 
-function fakeFFTData() {
+function fakeFFTData(t:number) {
     let peak1 = Math.round(Math.random() * 10 + frequency_bins*0.2);
     let peak2 = Math.round(Math.random() * 5 + frequency_bins*0.78);
     let peak3 = Math.round(Math.random() * 5 + frequency_bins*0.65);
@@ -95,7 +95,50 @@ function fakeFFTData() {
         }
         y = Math.round(y);
 
+        if(Math.random()*100 > 99) {
+            if (i>frequency_bins*0.3 && i<frequency_bins*0.4) {
+                y += Math.round(Math.random() * 60)+20;
+            }
+        }
+
+        
+        if(Math.random()*100 > 90) {
+            let randfreq = Math.random()/50 + 0.5
+            if(i>=frequency_bins*randfreq && i<frequency_bins*(randfreq+0.02))
+                y = Math.round(Math.random() * 60)+10;
+        }
+        
+        // if(Math.random()*100 > 4) {
+
+        //     let now = new Date().getTime()%1000;
+        //     // console.log(now);
+        //     if(now > 800) {
+        //         let randfreq = Math.random()/50 + 0.425
+        //         if(i>=frequency_bins*randfreq && i<frequency_bins*(randfreq+0.015))
+        //             if((t)%10 > 3)
+        //                 y = Math.round(Math.random() * 40)+5;
+        //     }
+        //     else {
+        //         let randfreq = Math.random()/200 + 0.40
+        //         if(i>=frequency_bins*randfreq && i<frequency_bins*(randfreq+0.015))
+        //             y = Math.round(Math.random() * 30);
+        //     }
+        // }
+
+        
+        if(Math.random()*100 > 10) {
+            let randfreq = Math.random()/300 + 0.53
+            if(i>=frequency_bins*randfreq && i<frequency_bins*(randfreq+0.01))
+                {
+                    let randoffset = Math.random()*3;
+                    if((t+randoffset)%20 > 13)
+                        y = Math.round(Math.random() * 80)+40;
+                }
+        }
+        
+
         res.push(y);
     }
+
     return res;
 }

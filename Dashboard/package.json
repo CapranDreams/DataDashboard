@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "API_temp": "npm --prefix ../API_temperature run dev",
+    "API_acoustic": "npm --prefix ../API_acoustic run dev",
+    "API_accel": "npm --prefix ../API_accelerometer run dev",
+    "API_db": "node --prefix ../DB_Mongo index.js"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +22,6 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -47,6 +50,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "mongodb": "^6.5.0",
     "ngx-webcam": "^0.4.1",
+    "rxjs": "^7.8.1",
     "typescript": "~5.4.2",
     "yargs": "^17.7.2"
   }
