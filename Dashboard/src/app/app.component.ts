@@ -16,5 +16,6 @@ import { RouterModule, Routes, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'DataDashboard';
 
-  
+
+
 }

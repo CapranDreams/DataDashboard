@@ -4,9 +4,10 @@
         <p>Select a sensor from the navigation bar to view its data</p>
 
         <h2>Status</h2>
-        <p (click)="testSensor('temperature')">Temperature: <span id="status-temperature" class="status-online">Running</span></p>
-        <p (click)="testSensor('camera')">Camera: <span id="status-camera" class="status-offline">Offline</span></p>
-        <p (click)="testSensor('accelerometer')">Accelerometer: <span id="status-accelerometer" class="status-offline">Offline</span></p>
-        <p (click)="testSensor('acoustic')">Acoustic: <span id="status-acoustic" class="status-offline">Offline</span></p>
+        <p>Temperature: <span id="status-temperature" #statusTemperature [className]="status_temperature ? 'status-online' : 'status-offline'">{{this.status_temperature ? 'Running' : 'Offline'}}</span></p>
+        <p>Camera: <span id="status-camera" #statusCamera [className]="status_camera ? 'status-online' : 'status-offline'">{{this.status_camera ? 'Running' : 'Offline'}}</span></p>
+        <p>Accelerometer: <span id="status-accelerometer" #statusAccelerometer [className]="status_accelerometer ? 'status-online' : 'status-offline'">{{this.status_accelerometer ? 'Running' : 'Offline'}}</span></p>
+        <p>Acoustic: <span id="status-acoustic" #statusAcoustic [className]="status_acoustic ? 'status-online' : 'status-offline'">{{this.status_acoustic ? 'Running' : 'Offline'}}</span></p>
+        <p>MongoDB: <span id="status-db" #statusDB [className]="status_db ? 'status-online' : 'status-offline'">{{this.status_db ? 'Running' : 'Offline'}}</span></p>
     </div>
 </section>

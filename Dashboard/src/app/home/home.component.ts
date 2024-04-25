@@ -1,88 +1,136 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+    HttpClientModule,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, AfterViewInit {
   title='Home';
 
   status_camera: boolean;
   status_accelerometer: boolean;
   status_acoustic: boolean;
   status_temperature: boolean;
+  status_db: boolean;
 
-  constructor() {
+  @ViewChild('statusTemperature') statusTemperature!: ElementRef
+  @ViewChild('statusCamera') statusCamera!: ElementRef
+  @ViewChild('statusAccelerometer') statusAccelerometer!: ElementRef
+  @ViewChild('statusAcoustic') statusAcoustic!: ElementRef
+  @ViewChild('statusDB') statusDB!: ElementRef
+
+  constructor(
+    private elementRef: ElementRef, 
+    private http : HttpClient, 
+  ) {
     this.status_camera = false;
     this.status_accelerometer = false;
     this.status_acoustic = false;
-    this.status_temperature = false;    
+    this.status_temperature = false;  
+    this.status_db = false;    
   }
 
-  testSensor(sensor: string) {
-    console.log("test sensor: "+sensor);
-    if(sensor=='camera') {
-      this.setStatus('camera', true);
-      this.setStatus('accelerometer', false);
-      this.setStatus('acoustic', false);
-      this.setStatus('temperature', false);
-    }
-    else if(sensor=='accelerometer') {
-      this.setStatus('camera', false);
-      this.setStatus('accelerometer', true);
-      this.setStatus('acoustic', false);
-      this.setStatus('temperature', false);
-    }
-    else if(sensor=='acoustic') {
-      this.setStatus('camera', false);
-      this.setStatus('accelerometer', false);
-      this.setStatus('acoustic', true);
-      this.setStatus('temperature', false);
-    }
-    else if(sensor=='temperature') {
-      this.setStatus('camera', false);
-      this.setStatus('accelerometer', false);
-      this.setStatus('acoustic', false);
-      this.setStatus('temperature', true);
-    }
+  ngOnInit(): void {
   }
 
-  setStatus(sensor: string, status: boolean) {
-    var classAdd = 'status-offline';
-    var classRemove = 'status-online';
-    var txt = 'Offline';
-    if(status == true) {
-      classAdd = 'status-online';
-      classRemove = 'status-offline';
-      txt = 'Running';
+  ngAfterViewInit() {
+    this.checkStatusCamera();
+    this.checkStatusAccelerometer();
+    this.checkStatusAcoustic();
+    this.checkStatusTemperature();    
+    this.checkStatusDB();    
+  }
+
+  checkStatusTemperature() {
+    const API_URL = "http://localhost:9901";
+    const options_getHttp:any = {
+      responseType: 'json' as const,
+      observe: 'body' as const
     }
-  
-    let ele = undefined;
-    if(sensor=='camera') {
-      ele = document.getElementById('status-camera');
-      this.status_camera = status;
+    this.http.get<any[]>(API_URL as string, options_getHttp).subscribe({
+      next: (response) => {
+        this.status_temperature = true;
+      },
+      error: (error) => {
+        this.status_temperature = false;
+      }
+    });
+    // this.statusTemperature.nativeElement.innerHTML = this.status_temperature ? 'Running' : 'Offline';
+  }
+
+  checkStatusAccelerometer() {
+    const API_URL = "http://localhost:9903";
+    const options_getHttp:any = {
+      responseType: 'json' as const,
+      observe: 'body' as const
     }
-    else if(sensor=='accelerometer') {
-      ele = document.getElementById('status-accelerometer');
-      this.status_accelerometer = status;
+    this.http.get<any[]>(API_URL as string, options_getHttp).subscribe({
+      next: (response) => {
+        this.status_accelerometer = true;
+      },
+      error: (error) => {
+        this.status_accelerometer = false;
+      }
+    });
+    // this.statusAccelerometer.nativeElement.innerHTML = this.status_accelerometer ? 'Running' : 'Offline';
+  }
+
+  checkStatusAcoustic() {
+    const API_URL = "http://localhost:9902";
+    const options_getHttp:any = {
+      responseType: 'json' as const,
+      observe: 'body' as const
     }
-    else if(sensor=='acoustic') {
-      ele = document.getElementById('status-acoustic');
-      this.status_acoustic = status;
+    this.http.get<any[]>(API_URL as string, options_getHttp).subscribe({
+      next: (response) => {
+        this.status_acoustic = true;
+      },
+      error: (error) => {
+        this.status_acoustic = false;
+      }
+    });
+    // this.statusAcoustic.nativeElement.innerHTML = this.status_acoustic ? 'Running' : 'Offline';
+  }
+
+  checkStatusCamera() {
+    const API_URL = "http://localhost:9904";
+    const options_getHttp:any = {
+      responseType: 'json' as const,
+      observe: 'body' as const
     }
-    else if(sensor=='temperature') {
-      ele = document.getElementById('status-temperature');
-      this.status_temperature = status;
+    this.http.get<any[]>(API_URL as string, options_getHttp).subscribe({
+      next: (response) => {
+        this.status_camera = true;
+      },
+      error: (error) => {
+        this.status_camera = false;
+      }
+    });
+    // this.statusCamera.nativeElement.innerHTML = this.status_camera ? 'Running' : 'Offline';
+  }
+
+  checkStatusDB() {
+    const API_URL = "http://localhost:9909";
+    const options_getHttp:any = {
+      responseType: 'json' as const,
+      observe: 'body' as const
     }
-    
-    if(ele != undefined) {
-      ele.innerHTML = txt;
-      ele.classList.add(classAdd);
-      ele.classList.remove(classRemove);
-    }
+    this.http.get<any[]>(API_URL as string, options_getHttp).subscribe({
+      next: (response) => {
+        this.status_db = true;
+      },
+      error: (error) => {
+        this.status_db = false;
+      }
+    });
+    // this.statusDB.nativeElement.innerHTML = this.status_db ? 'Running' : 'Offline';
   }
 }
 
