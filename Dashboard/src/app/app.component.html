@@ -2,35 +2,35 @@
   <div id="nav_bar">
     <span class="nav_item_header"><strong>Data Dashboard</strong></span>
     <div class="nav_section">
-        <a class="nav_link nav_active" href="">
+        <a class="nav_link" [routerLink]="['/']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_home.png" class="nav_icon" />
             <span class="nav_item">Dasboard</span>
         </a>
     </div>
     <div class="nav_section">
-        <a class="nav_link" href="temperature">
+        <a class="nav_link" [routerLink]="['/temperature']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_temperature.png" class="nav_icon" />
             <span class="nav_item">Temperature</span>
         </a>
-        <a class="nav_link" href="camera">
+        <a class="nav_link" [routerLink]="['/camera']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_camera.png" class="nav_icon" />
             <span class="nav_item">Camera</span>
         </a>
-        <a class="nav_link" href="accelerometer">
+        <a class="nav_link" [routerLink]="['/accelerometer']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_accelerometer.png" class="nav_icon" />
             <span class="nav_item">Accelerometer</span>
         </a>
-        <a class="nav_link" href="acoustic">
+        <a class="nav_link" [routerLink]="['/acoustic']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_acoustic.png" class="nav_icon" />
             <span class="nav_item">Acoustic</span>
         </a>
     </div>
     <div class="nav_section">
-        <a class="nav_link" href="info">
+        <a class="nav_link" [routerLink]="['/info']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_about.png" class="nav_icon" />
             <span class="nav_item">About</span>
         </a>
-        <a class="nav_link" href="userlog">
+        <a class="nav_link" [routerLink]="['/userlog']" [routerLinkActive]="['nav_active']" [routerLinkActiveOptions]="{exact: true}">
             <img src="assets/nav_icons/icon_logs.png" class="nav_icon" />
             <span class="nav_item">User Logs</span>
         </a>
