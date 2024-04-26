@@ -6,7 +6,6 @@ import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http'
 import { Subscription, timer, Observable } from 'rxjs';
 
 const API_URL = "http://localhost:9903";
-const update_frequency = 250; // ms
 
 interface IData {
   time: number; // time
@@ -32,6 +31,8 @@ export class AccelerometerComponent implements AfterViewInit, OnDestroy {
     private http : HttpClient, ) {
 
   }
+  
+  update_frequency = 250; // ms
   @ViewChild('tileContainer') tileContainer!: ElementRef
   frequency_bins = 128;
   time_bins = 256;
@@ -40,7 +41,7 @@ export class AccelerometerComponent implements AfterViewInit, OnDestroy {
   accelSubscription: Subscription = new Subscription();
   timerObs!: Observable<number>;
   ngAfterViewInit() {
-    this.timerObs = timer(100, update_frequency); // Create a timer that emits every 1000 milliseconds
+    this.timerObs = timer(100, this.update_frequency); // Create a timer that emits every 1000 milliseconds
     this.timerObs.subscribe(() => {
       this.updateData();
     });
@@ -105,15 +106,12 @@ export class AccelerometerComponent implements AfterViewInit, OnDestroy {
   private colorGradient(fadeFraction:number) {
     let color1 = {
       red: 24, green: 0, blue: 46
-      // red: 19, green: 233, blue: 19
     };
     let color2 = {
       red: 214, green: 0, blue: 61
-      // red: 255, green: 255, blue: 0
     };
     let color3 = {
       red: 209, green: 185, blue: 2
-      // red: 255, green: 0, blue: 0
     };
 
     var fade = fadeFraction * 2;

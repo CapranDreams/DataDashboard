@@ -1,9 +1,8 @@
 <section>
     <h1>Accelerometer Power Spectral Density</h1>
-    <div id="accelerometer">
-        <div id="tileContainer" #tileContainer >
-        </div>
-        <div id="yaxis">Frequency</div>
-        <div id="xaxis">Time</div>
+    <div id="accelerometer" class="containingChart">
+        <div id="tileContainer" #tileContainer></div>
+        <div id="yaxis">Frequency (0-6100 Hz)</div>
+        <div id="xaxis">Time ({{this.update_frequency}}ms intervals)</div>
     </div>
 </section>
