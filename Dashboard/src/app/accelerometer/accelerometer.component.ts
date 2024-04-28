@@ -4,6 +4,7 @@ import { RouterOutlet, Router } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subscription, timer, Observable } from 'rxjs';
+import { HostListener } from '@angular/core';
 
 const API_URL = "http://localhost:9903";
 
@@ -39,15 +40,22 @@ export class AccelerometerComponent implements AfterViewInit, OnDestroy {
   data: number[][] = []; // fft data
 
   accelSubscription: Subscription = new Subscription();
+  timerSubscription!: Subscription;
   timerObs!: Observable<number>;
   ngAfterViewInit() {
     this.timerObs = timer(100, this.update_frequency); // Create a timer that emits every 1000 milliseconds
-    this.timerObs.subscribe(() => {
+    this.timerSubscription = this.timerObs.subscribe(() => {
       this.updateData();
     });
   }
   ngOnDestroy() {
+    this.unloadPage();
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  unloadPage() {
     this.accelSubscription.unsubscribe();
+    this.timerSubscription.unsubscribe();
+    console.log("destroyed accelerometer subscriptions");
   }
 
   private renderHeatmap() {

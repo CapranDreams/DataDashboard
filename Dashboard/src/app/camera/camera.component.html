@@ -1,9 +1,10 @@
+<div>
+    <h1>Camera Live Weld Feed</h1>
+</div>
+
+<h2>ML Flash Classification:</h2>
 <section>
     <div>
-        <h1>Camera Live Weld Feed</h1>
-    </div>
-    <div>
-        <h2>ML Flash Classification:</h2>
         <table>
             <tr>
                 <th>Class</th>
@@ -31,18 +32,19 @@
                 <td>0%</td>
             </tr>
             <tr>
-                <td>E</td>
+                <td>X</td>
                 <td>0.000</td>
                 <td>0%</td>
             </tr>
         </table>
     </div>
 
-    <canvas class="shadow" id="videostream" width="640" height="480"></canvas>
-    <!-- frames of weld video (example)
-     onyxibex.com/sensor/weld_video -->
-
+    <div class="video">
+        <video controls autoplay  muted #videoPlayer id="videoPlayer">
+            <source src="{{videosource}}" type="video/mp4" />
+            Browser not supported
+        </video>
+    </div>
+    
 </section>
-
-<img id="camera-feed" src="assets/camera/camera1.png" />
-
+<p>Video source: {{videosource}}</p>

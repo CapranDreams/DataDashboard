@@ -11,7 +11,7 @@ type DataPoint = {
 export class TemperatureDataService {
 
   constructor() {
-    console.log('starting data service');
+    console.log('starting temperature data service');
   }
 
   temperatureData:DataPoint[] = [];
@@ -21,8 +21,8 @@ export class TemperatureDataService {
   }
 
   getData():DataPoint[] {
-    console.log("get");
-    console.log(this.temperatureData);
+    // console.log("get");
+    // console.log(this.temperatureData);
     return this.temperatureData;
   }
 }

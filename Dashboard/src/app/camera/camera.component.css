@@ -1,20 +1,19 @@
 table {
-    padding: 10px;
     border-spacing: 5px;
     border-collapse: separate;
+    text-align: center;
 }
 td {
-    padding: 10px;
+    padding: 5px;
     border-spacing: 5px;
-    border-collapse: separate;
-    padding-left: 50px;
 }
 
-#camera-feed {
-    width: 480px;
-    height: 400px;
-    rotate: 90deg;
-    position: absolute;
-    top: 20vh;
-    right: 0vw;
+video {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }

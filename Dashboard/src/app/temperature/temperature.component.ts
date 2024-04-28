@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, Router } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
@@ -37,6 +37,7 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
 
   tempSubscription: Subscription = new Subscription();
   timerObs!: Observable<number>;
+  timerSubscription!: Subscription;
 
   canvas: any;
   data: DataPoint[] = [ ];
@@ -79,15 +80,21 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
     let previousData:DataPoint[] = this.temperatureService.getData();
     this.addData(previousData);
 
-    this.timerObs = timer(100, update_frequency); // Create a timer that emits every 1000 milliseconds
+    this.timerObs = timer(100, update_frequency); // Create a timer that emits every 100 milliseconds
 
-    this.timerObs.subscribe(() => {
+    this.timerSubscription = this.timerObs.subscribe(() => {
       this.updateData();
     });
   }
 
   ngOnDestroy() {
-      this.tempSubscription.unsubscribe();
+    this.unloadPage();
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  unloadPage() {
+    // this.timerSubscription.unsubscribe();
+    this.tempSubscription.unsubscribe();
+    console.log("destroyed temperature subscriptions");
   }
 
   // makes an HTTP GET request to the API and expects a response of type DataPoint[]
@@ -107,39 +114,40 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
         console.log('Error:', error);
       }
     });
-    // console.log("update data from " + API_URL);
   }
  
   addData = (data:any) => {
-    // console.log(data);
     data.forEach( (val:DataPoint) => {
-      // console.log(val);
       let newData = { x: val.x, y: val.y };
       this.data.push(newData);
       if(this.data.length > chart_window_size) {
         this.data.shift();
       }
-
-      // set color of plot based on temperature
-      this.chartOptions.data[0].color = "#036c99";
-      if(val.y < 40) this.chartOptions.data[0].color = "#039299";
-      else if(val.y < 50) this.chartOptions.data[0].color = "#039988";
-      else if(val.y < 60) this.chartOptions.data[0].color = "#039960";
-      else if(val.y < 70) this.chartOptions.data[0].color = "#02bd4d";
-      else if(val.y < 80) this.chartOptions.data[0].color = "#8fe309";
-      else if(val.y < 90) this.chartOptions.data[0].color = "#e3dc09";
-      else if(val.y < 100) this.chartOptions.data[0].color = "#e3a909";
-      else if(val.y < 110) this.chartOptions.data[0].color = "#e38809";
-      else if(val.y < 120) this.chartOptions.data[0].color = "#bd4200";
-      else if(val.y < 130) this.chartOptions.data[0].color = "#bd2c00";
-      else if(val.y < 140) this.chartOptions.data[0].color = "#bd0900";
-      else this.chartOptions.data[0].color = "#7a0050";
+      
+      if(this.router.url === '/temperature') {
+        // set color of plot based on temperature
+        this.chartOptions.data[0].color = "#036c99";
+        if(val.y < 40) this.chartOptions.data[0].color = "#039299";
+        else if(val.y < 50) this.chartOptions.data[0].color = "#039988";
+        else if(val.y < 60) this.chartOptions.data[0].color = "#039960";
+        else if(val.y < 70) this.chartOptions.data[0].color = "#02bd4d";
+        else if(val.y < 80) this.chartOptions.data[0].color = "#8fe309";
+        else if(val.y < 90) this.chartOptions.data[0].color = "#e3dc09";
+        else if(val.y < 100) this.chartOptions.data[0].color = "#e3a909";
+        else if(val.y < 110) this.chartOptions.data[0].color = "#e38809";
+        else if(val.y < 120) this.chartOptions.data[0].color = "#bd4200";
+        else if(val.y < 130) this.chartOptions.data[0].color = "#bd2c00";
+        else if(val.y < 140) this.chartOptions.data[0].color = "#bd0900";
+        else this.chartOptions.data[0].color = "#7a0050";
+      }
     })
     this.updateChartData();
   }
   
   updateChartData() {
-    this.canvas.render();
+    if(this.router.url === '/temperature') {
+      this.canvas.render();      
+    }
     this.temperatureService.setData(this.data);
   }
 

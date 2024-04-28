@@ -4,6 +4,7 @@ import { RouterOutlet, Router } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subscription, timer, Observable } from 'rxjs';
+import { HostListener } from '@angular/core';
 
 const API_URL = "http://localhost:9902";
 const API_URL_FREQ = "http://localhost:9902/freq";
@@ -44,6 +45,7 @@ export class AcousticComponent implements AfterViewInit, OnDestroy {
   acousticSubscription: Subscription = new Subscription();
   acousticSubscriptionFreq: Subscription = new Subscription();
   timerObsAcoustic!: Observable<number>;
+  acousticTimerSubscription!: Subscription;
 
   canvas: any;
   data: DataPoint[] = [ {
@@ -92,14 +94,20 @@ export class AcousticComponent implements AfterViewInit, OnDestroy {
     this.updateFreq(); // one time build frequency list
 
     this.timerObsAcoustic = timer(100, update_frequency);
-    this.timerObsAcoustic.subscribe(() => {
+    this.acousticTimerSubscription = this.timerObsAcoustic.subscribe(() => {
       this.updateData();
     });
   }
 
   ngOnDestroy() {
+    this.unloadPage();
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadPage() {
     this.acousticSubscription.unsubscribe();
     this.acousticSubscriptionFreq.unsubscribe();
+    this.acousticTimerSubscription.unsubscribe();
     console.log("destroyed acoustic subscriptions");
   }
 
