@@ -65,7 +65,7 @@ export class AcousticComponent implements AfterViewInit, OnDestroy {
     axisX: {
       type: 'auto',
       title: 'Frequency (Hz)',
-      interval: 1000,
+      interval: 2000,
       gridColor: '#e0e0e0',
       gridThickness: 1,
     },

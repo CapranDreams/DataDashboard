@@ -5,6 +5,14 @@
         <p>
             This dashboard was put together for the final project for class SEIS622.
         </p>
+        <p class="tabbed">This project uses Angular based on concepts we learned in class.</p>
+        <p class="tabbed">Data for each sensor is generated and accessed using an API subscription.</p>
+        <p class="tabbed">Data generated is fake but imitates real signals.</p>
+        <p class="tabbed">Acoustic and Temperature plots use CanvasJS.</p>
+        <p>The data presented here is intended to be used as feedback for operators to determine if a process is in normal operating conditions.
+            By monitoring the sensor data, operators can respond to shifting trends or anomalous artifacts in the data by changing machine settings.
+            Operators can also use the data to monitor the health of the machine overall or to determine if a material input has the wrong properties based on knowledge of what it should look like.
+        </p>
     </div>
     
     <div>
@@ -17,16 +25,23 @@
             surface finish of the welded metal. The sensors monitored here are indicators of a functioning 
             process.
         </p>
-        <p>Thermocouple temperature monitoring works by embedding 8 thermocouples into the anvil below the 
-            weld surface. As the machine moves over the part being welded near the thermocouples, the 
-            temperature increases. Knowing the rate of motion and the temperature gradient observed in the 
-            plot, we can calculate the max temperature of the weld to ensure it does not get too hot or too 
-            cold. We can also calculate the total energy input into the weld system. 
-        </p>
-        <p>Camera frames can be used to observe the amount of flash generated at the weld surface. Flash is 
-            defined as hot metal that is extruded out of the surface if the metal gets too hot. If it is 
-            observed, the process should be cooled in-situ.
-        </p>
+        <div class="gridded" style="grid-template-columns: 2fr 1fr;">
+            <p>Thermocouple temperature monitoring works by embedding 8 thermocouples into the anvil below the 
+                weld surface. As the machine moves over the part being welded near the thermocouples, the 
+                temperature increases. Knowing the rate of motion and the temperature gradient observed in the 
+                plot, we can calculate the max temperature of the weld to ensure it does not get too hot or too 
+                cold. We can also calculate the total energy input into the weld system. 
+            </p>
+            <img src="assets/tc_array.png" style="width:100%;" />
+        </div>
+        <div class="gridded">
+            <p>Camera frames can be used to observe the amount of flash generated at the weld surface. Flash is 
+                defined as hot metal that is extruded out of the surface if the metal gets too hot. If it is 
+                observed, the process should be cooled in-situ.
+            </p>
+            <img src="assets/flash.jpg" style="width:100%;" />
+        </div>
+
         <p>Accelerometer data can be used to observe the acceleration of the machine in the x, y, and z 
             axis. The acceleration data usually shows features of high torque when the machine is running too 
             cold. Similarly, low torque and acceleration can indicate the process is too high. Additionally, 
@@ -40,37 +55,41 @@
         </p>
     </div>
 
-    <div>
-        <h1>What is Friction Stir Welding?</h1>
-        <p>
-            Friction stir welding (FSW) is a solid-state joining technique that uses a rotating tool to create 
-            friction with material, heating it up and joining it. It is primarily used on metal applications 
-            which need very high weld strength. FSW is capable of joining aluminium alloys, copper alloys, 
-            titanium alloys, mild steel, stainless steel and magnesium alloys. In addition, joining of dissimilar 
-            metals, such as aluminium to magnesium alloys, has been achieved by FSW. Application of FSW can be 
-            found in modern shipbuilding, trains, automotive, military and aerospace applications.
-        </p>
-        A number of potential advantages of FSW over conventional fusion-welding processes have been identified:
-        <ul>
-            <li>Good mechanical properties in the as-welded condition.</li>
-            <li>Improved safety due to the absence of toxic fumes or the spatter of molten material.</li>
-            <li>No consumables — A threaded pin made of conventional tool steel, e.g., hardened H13, can weld over 1 km (0.62 mi) of aluminium, and no filler or gas shield is required for aluminium.</li>
-            <li>Easily automated on simple milling machines — lower setup costs and less training.</li>
-            <li>Can operate in all positions (horizontal, vertical, etc.), as there is no weld pool.</li>
-            <li>Generally good weld appearance and minimal thickness under/over-matching, thus reducing the need for expensive machining after welding.</li>
-            <li>Can use thinner materials with same joint strength.</li>
-            <li>Low environmental impact.</li>
-            <li>General performance and cost benefits from switching from fusion to friction.</li>
-        </ul>
-        However, some disadvantages of the process have been identified:
-        <ul>
-            <li>Exit hole left when tool is withdrawn.</li>
-            <li>Large down forces required with heavy-duty clamping necessary to hold the plates together.</li>
-            <li>Less flexible than manual and arc processes (difficulties with thickness variations and non-linear welds).</li>
-            <li>Often slower traverse rate than some fusion welding techniques, although this may be offset if fewer welding passes are required.</li>
-        </ul>
+    <div style="display:grid; grid-template-columns: 6fr 4fr">
+        <div>
+            <h1>What is Friction Stir Welding?</h1>
+            <p>
+                Friction stir welding (FSW) is a solid-state joining technique that uses a rotating tool to create 
+                friction with material, heating it up and joining it. It is primarily used on metal applications 
+                which need very high weld strength. FSW is capable of joining aluminium alloys, copper alloys, 
+                titanium alloys, mild steel, stainless steel and magnesium alloys. In addition, joining of dissimilar 
+                metals, such as aluminium to magnesium alloys, has been achieved by FSW. Application of FSW can be 
+                found in modern shipbuilding, trains, automotive, military and aerospace applications.
+            </p>
+            A number of potential advantages of FSW over conventional fusion-welding processes have been identified:
+            <ul>
+                <li>Good mechanical properties in the as-welded condition.</li>
+                <li>Improved safety due to the absence of toxic fumes or the spatter of molten material.</li>
+                <li>No consumables — A threaded pin made of conventional tool steel, e.g., hardened H13, can weld over 1 km (0.62 mi) of aluminium, and no filler or gas shield is required for aluminium.</li>
+                <li>Easily automated on simple milling machines — lower setup costs and less training.</li>
+                <li>Can operate in all positions (horizontal, vertical, etc.), as there is no weld pool.</li>
+                <li>Generally good weld appearance and minimal thickness under/over-matching, thus reducing the need for expensive machining after welding.</li>
+                <li>Can use thinner materials with same joint strength.</li>
+                <li>Low environmental impact.</li>
+                <li>General performance and cost benefits from switching from fusion to friction.</li>
+            </ul>
+            However, some disadvantages of the process have been identified:
+            <ul>
+                <li>Exit hole left when tool is withdrawn.</li>
+                <li>Large down forces required with heavy-duty clamping necessary to hold the plates together.</li>
+                <li>Less flexible than manual and arc processes (difficulties with thickness variations and non-linear welds).</li>
+                <li>Often slower traverse rate than some fusion welding techniques, although this may be offset if fewer welding passes are required.</li>
+            </ul>
+        </div>
+        <div>
+            <img src="assets/FSW_explanation.png" style="width:100%" />
+        </div>
     </div>
 
-    <img src="assets/FSW_explanation.png" />
 
 </section>

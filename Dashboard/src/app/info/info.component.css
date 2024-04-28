@@ -1,0 +1,15 @@
+
+
+p.tabbed {
+    text-indent: 2em;
+}
+
+.gridded {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    text-align: justify;
+}
+
+.gridded p {
+    width: 97%;
+}

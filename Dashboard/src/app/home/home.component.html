@@ -1,13 +1,54 @@
 <section>
     <div>
         <h1>Home</h1>
-        <p>Select a sensor from the navigation bar to view its data</p>
+        <img src="assets/PAR_machine.png" id="imgMachine"/>
+        <p>Select a sensor from the navigation bar to view its data.</p>
+        <p>For more information, please see the <a href="/info">About page</a>.</p>
+    </div>
 
+    <div id="statusList">
         <h2>Status</h2>
-        <p>Temperature: <span id="status-temperature" #statusTemperature [className]="status_temperature ? 'status-online' : 'status-offline'">{{this.status_temperature ? 'Running' : 'Offline'}}</span></p>
-        <p>Camera: <span id="status-camera" #statusCamera [className]="status_camera ? 'status-online' : 'status-offline'">{{this.status_camera ? 'Running' : 'Offline'}}</span></p>
-        <p>Accelerometer: <span id="status-accelerometer" #statusAccelerometer [className]="status_accelerometer ? 'status-online' : 'status-offline'">{{this.status_accelerometer ? 'Running' : 'Offline'}}</span></p>
-        <p>Acoustic: <span id="status-acoustic" #statusAcoustic [className]="status_acoustic ? 'status-online' : 'status-offline'">{{this.status_acoustic ? 'Running' : 'Offline'}}</span></p>
-        <p>MongoDB: <span id="status-db" #statusDB [className]="status_db ? 'status-online' : 'status-offline'">{{this.status_db ? 'Running' : 'Offline'}}</span></p>
+        <ul>
+            <li [style.background-color]="this.status_temperature ? '#d8edbb' : '#f2c4bd'"
+                [style.border-color]="this.status_temperature ? '#c5e39d' : '#e3b196'">
+                Temperature: 
+                <span id="status-temperature" #statusTemperature 
+                    [className]="status_temperature ? 'status-online' : 'status-offline'">
+                    {{this.status_temperature ? 'Running' : 'Offline'}}
+                </span>
+            </li>
+            <li [style.background-color]="this.status_camera ? '#d8edbb' : '#f2c4bd'"
+                [style.border-color]="this.status_camera ? '#c5e39d' : '#e3b196'">
+                Camera: 
+                <span id="status-camera" #statusCamera 
+                    [className]="status_camera ? 'status-online' : 'status-offline'">
+                    {{this.status_camera ? 'Running' : 'Offline'}}
+                </span>
+            </li>
+            <li [style.background-color]="this.status_accelerometer ? '#d8edbb' : '#f2c4bd'"
+                [style.border-color]="this.status_accelerometer ? '#c5e39d' : '#e3b196'">
+                Accelerometer: 
+                <span id="status-accelerometer" #statusAccelerometer 
+                    [className]="status_accelerometer ? 'status-online' : 'status-offline'">
+                    {{this.status_accelerometer ? 'Running' : 'Offline'}}
+                </span>
+            </li>
+            <li [style.background-color]="this.status_acoustic ? '#d8edbb' : '#f2c4bd'"
+                [style.border-color]="this.status_acoustic ? '#c5e39d' : '#e3b196'">
+                Acoustic: 
+                <span id="status-acoustic" #statusAcoustic 
+                    [className]="status_acoustic ? 'status-online' : 'status-offline'">
+                    {{this.status_acoustic ? 'Running' : 'Offline'}}
+                </span>
+            </li>
+            <li [style.background-color]="this.status_db ? '#d8edbb' : '#f2c4bd'"
+                [style.border-color]="this.status_db ? '#c5e39d' : '#e3b196'">
+                MongoDB: 
+                <span id="status-db" #statusDB 
+                    [className]="status_db ? 'status-online' : 'status-offline'">
+                    {{this.status_db ? 'Running' : 'Offline'}}
+                </span>
+            </li>
+        </ul>
     </div>
 </section>

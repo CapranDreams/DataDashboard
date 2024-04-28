@@ -1,6 +1,36 @@
 .status-online {
-    color: rgb(0, 170, 0);
+    color: #00aa00;
 }
 .status-offline {
-    color: red;
+    color: #ff0000;
+}
+
+#statusList ul {
+    list-style-type: none;
+    padding: 0;
+}
+#statusList li {
+    padding: 7px;
+    background-color: aqua;
+    border: 5px solid black;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    padding: 5px;
+    margin: 5px;
+}
+
+section p {
+    width: 92%;
+    text-align: justify;
+}
+
+p.tabbed {
+    text-indent: 2em;
+}
+
+#imgMachine {
+    width: 90%;
 }

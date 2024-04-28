@@ -51,7 +51,7 @@ export class TemperatureComponent implements AfterViewInit, OnDestroy {
     axisX: {
       type: 'auto',
       title: 'Time (seconds)',
-      interval: 5,
+      // interval: 5,
       gridColor: '#e0e0e0',
       gridThickness: 1
     },
