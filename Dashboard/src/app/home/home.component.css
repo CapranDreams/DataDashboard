@@ -17,7 +17,7 @@
 
 section {
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 1fr 3fr;
     padding: 5px;
     margin: 5px;
 }
@@ -27,10 +27,59 @@ section p {
     text-align: justify;
 }
 
+#homeContent {
+    padding-left: 2vw;
+}
+
 p.tabbed {
     text-indent: 2em;
 }
 
 #imgMachine {
-    width: 90%;
+    width: 100%;
+}
+
+#imgLogo {
+    width: 20vw;
+}
+
+.info-container,
+.introduction-container,
+.mission-container {
+    margin-top: 200px;
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    margin-top: 20px; /* Adjusted margin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
+    font-size: small;
+}
+.dashboard-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px; /* Adjusted margin */
+    background-color: rgb(183, 229, 232);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(247, 247, 94);
+    font-weight: bold;
+    font-size: x-large;
+}
+.welcome-container {
+    color:rgb(183, 229, 232);
+    text-align: left;
+    padding: 0px;
+    background-color: rgba(red, green, blue, alpha);
+    margin-bottom: 0px;
+}
+
+.rightAligned {
+    float: right;
+}
+
+h1 {
+    color:#25324d;
 }
