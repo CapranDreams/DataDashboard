@@ -13,6 +13,9 @@
     padding: 7px;
     background-color: aqua;
     border: 5px solid black;
+    font-weight: bold;
+    font-size: larger;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 section {
@@ -43,7 +46,6 @@ p.tabbed {
     width: 20vw;
 }
 
-.info-container,
 .introduction-container,
 .mission-container {
     margin-top: 200px;
@@ -58,6 +60,24 @@ p.tabbed {
     max-height: auto;
     font-size: small;
 }
+
+.info-container {
+    margin-top: 200px;
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    margin-top: 20px; /* Adjusted margin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 80%;
+}
+
+.info-container > h2 {
+    color:#25324d;
+}
+
 .dashboard-container {
     text-align: center;
     padding: 20px;
@@ -68,13 +88,6 @@ p.tabbed {
     font-weight: bold;
     font-size: x-large;
 }
-.welcome-container {
-    color:rgb(183, 229, 232);
-    text-align: left;
-    padding: 0px;
-    background-color: rgba(red, green, blue, alpha);
-    margin-bottom: 0px;
-}
 
 .rightAligned {
     float: right;
@@ -82,4 +95,14 @@ p.tabbed {
 
 h1 {
     color:#25324d;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: left;
+    padding-bottom: 2px;
+}
+
+header > p {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 7px;
 }
