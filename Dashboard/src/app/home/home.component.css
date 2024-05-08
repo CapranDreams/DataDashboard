@@ -15,7 +15,11 @@
     border: 5px solid black;
     font-weight: bold;
     font-size: larger;
-    font-family:Arial, Helvetica, sans-serif;
+}
+
+#statusList h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size:1.5rem;
 }
 
 section {
@@ -46,9 +50,29 @@ p.tabbed {
     width: 20vw;
 }
 
-.introduction-container,
+.machine-container {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
+}
+
+.introduction-container {
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    margin-top: 70px; /* Adjusted margin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
+    font-size: small;
+}
+
 .mission-container {
-    margin-top: 200px;
     margin-bottom: 10px;
     padding: 20px;
     padding-bottom: 10px;
@@ -62,7 +86,6 @@ p.tabbed {
 }
 
 .info-container {
-    margin-top: 200px;
     margin-bottom: 10px;
     padding: 20px;
     padding-bottom: 10px;
@@ -76,6 +99,15 @@ p.tabbed {
 
 .info-container > h2 {
     color:#25324d;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.info-container > p {
+    font-weight:normal;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .dashboard-container {
@@ -99,10 +131,29 @@ h1 {
     font-size: 4rem;
     text-align: left;
     padding-bottom: 2px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 header > p {
     text-align: left;
     font-size: 1.5rem;
     padding-left: 7px;
+}
+
+.introduction-container > h2 {
+    font-weight:normal;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mission-container > h2 {
+    font-weight:bold;
+    font-family:'Times New Roman', Times, serif;
+    font-size:1.5rem;
+}
+
+.mission-container > p {
+    font-weight:normal;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
