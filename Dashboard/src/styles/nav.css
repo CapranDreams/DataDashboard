@@ -6,11 +6,13 @@
     height:100vh;
     width: 14vw;
     position: fixed;
-    padding:0.75vw;;
+    padding:1vw;;
 }
 
 .nav_logo {
     width: 12vw;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
 }
 
 .nav_section {
@@ -19,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:2vh;
+    margin-top:1.5vh;
 }
 
 .nav_item {
@@ -28,13 +30,13 @@
     color: rgb(255, 255, 255);
     font-family:'Times New Roman', Times, serif;
     font-size: 1.3rem;
-    font-weight:normal;
+    font-weight: normal;
     padding-left: 20px;
-    vertical-align: middle;
 }
 
 .nav_icon {
     max-height: 2em;
+    vertical-align: middle;
     /* Adjust below as needed to match desired theme color (default is black) */
     filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(100%) contrast(100%);
 }

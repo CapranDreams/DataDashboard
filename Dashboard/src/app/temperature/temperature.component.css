@@ -1,0 +1,9 @@
+h1 {
+    color:#25324d;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family:'Times New Roman', Times, serif;
+    padding-bottom: 40px;
+}

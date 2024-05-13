@@ -1,11 +1,19 @@
-table {
-    border-spacing: 5px;
-    border-collapse: separate;
-    text-align: center;
+h1 {
+    color:#25324d;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family:'Times New Roman', Times, serif;
+    padding-bottom: 5vw;
 }
-td {
-    padding: 5px;
-    border-spacing: 5px;
+
+h2 {
+    color:black;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 1vw;
 }
 
 video {
@@ -16,4 +24,22 @@ video {
 section {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    padding-left: 1vw;
+}
+
+table {
+    border-spacing: 5px;
+    border-collapse: separate;
+    text-align: center;
+}
+
+tr {
+    font-weight:normal;
+    font-size:1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+    padding: 5px;
+    border-spacing: 5px;
 }

@@ -1,15 +1,66 @@
-
-
-p.tabbed {
-    text-indent: 2em;
+#title {
+    color:#25324d;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family:'Times New Roman', Times, serif;
 }
 
-.gridded {
-    display: grid;
-    grid-template-columns: 7fr 3fr;
+p  {
+    font-weight:normal;
+    font-size:1rem;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: justify;
 }
 
-.gridded p {
-    width: 97%;
+li {
+    font-weight:normal;
+    font-size:1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+    margin: 5px;
+}
+
+#assignment {
+    margin-top: 70px; 
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
+}
+
+#welding_basics {
+    margin-top: 20px; 
+    margin-bottom: 10px;
+    margin-right: 20px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
+}
+
+#welding_details {
+    margin-top: 20px; 
+    margin-bottom: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgba(red, green, blue, alpha); /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: auto;
 }

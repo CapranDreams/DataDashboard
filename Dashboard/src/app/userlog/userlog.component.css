@@ -1,3 +1,26 @@
+h1 {
+    color:#25324d;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family:'Times New Roman', Times, serif;
+    padding-bottom: 5vw;
+}
+
+#user_entry {
+    font-weight:bold;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+th {
+    font-weight:normal;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 div {
     padding: 2vh;
 }
@@ -9,13 +32,16 @@ table {
     width: 50vw;
     text-align: center;
 }
+
 td {
     border: 1px solid #d6d6d6;
     background-color: aliceblue;
 }
+
 table tr th:nth-child(1){
     width: 40%;
 }
+
 table tr th:nth-child(2){
     width: 60%;
 }
