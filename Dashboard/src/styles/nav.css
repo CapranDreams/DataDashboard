@@ -4,17 +4,17 @@
     left:0vw;
     top:0vh;
     height:100vh;
-    width: 10vw;
+    width: 14vw;
     position: fixed;
     padding:0.75vw;;
 }
 
 .nav_logo {
-    width: 8vw;
+    width: 12vw;
 }
 
 .nav_section {
-    width: 9.5vw;
+    width: 13.5vw;
     padding-left:0.25vw;
     display: flex;
     flex-direction: column;
@@ -25,12 +25,20 @@
 .nav_item {
     margin-left: 10px;
     overflow: hidden;
+    color: rgb(255, 255, 255);
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    font-weight:normal;
+    padding-left: 20px;
+    vertical-align: middle;
 }
+
 .nav_icon {
-    max-height: 1.25em;
+    max-height: 2em;
     /* Adjust below as needed to match desired theme color (default is black) */
-    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+    filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(100%) contrast(100%);
 }
+
 .nav_item_header {
     font-size: 1.2em;
     padding: 1vh;
@@ -44,7 +52,7 @@
 
 .nav_link {
     border: 2px solid #4d618b;
-    background-color: #394357;
+    background-color: #25324d;
     color: #a0b6e0;
     border-radius: 0.5vh;
     width: 100%;
