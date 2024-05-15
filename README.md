@@ -29,3 +29,4 @@ SEIS622_Project
    - Run `npm run start` to start the dahsboard application from inside vscode. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
    - Currently, APIs use `npm run dev` to start them up.
    - MongoDB API uses `node index.js` to start.
+   - The API_camera is not currently used.
